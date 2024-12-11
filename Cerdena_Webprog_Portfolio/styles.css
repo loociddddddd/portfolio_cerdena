@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #000000;
+    color: #fff;
+}
+#header{ 
+    width: 100%;
+    height: 100vh;
+    background-image: url(IMAGES/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding: 10px 10%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo{
+    width: 300px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #080808;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin: 20%;
+    font-size: 30px;
+}
+.header-text h1 {
+    font-size: 77px;
+    margin-top: 7px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+@font-face {
+    font-family: 'OTP';  /* This is the name you will use to reference the font */
+    src: url('a_another_tag/aAnotherTag.otf') format('opentype');  /* Path to the .otf file */
+    font-weight:normal;
+    font-style: normal;
+}
+.LOOCID {
+    font-family: 'OTP', sans-serif;
+    font-size:  2em;
+    font-weight: bold;
+    color: #b71150;
+    box-shadow: 0 0 5px #b71150;
+}
+.LOOCID:hover{
+    box-shadow: 0 0 5px #b71150,
+    0 0 25px, 0 0 50px,
+    0 0 100px, 0 0 200p;
+}
+/* Profile */
+#Profile{
+    padding: 80px 0px;
+    color: #ffffff;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+.Profile-col-1{
+    flex-basis: 35%;
+    position: relative;
+    width: 300px; 
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    transform: translateY(0);
+}
+.Profile-col-1 img{
+    width: 100%;
+    position: absolute;
+    transition: opacity 0.5s ease;
+}
+.overlay-image {
+    opacity: 1;
+}
+
+.original-image {
+    opacity: 0;
+}
+
+.Profile-col-1:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); 
+}
+
+.Profile-col-1:hover .overlay-image {
+    opacity: 0;
+}
+
+.Profile-col-1:hover .original-image {
+    opacity: 1;
+}
+.Profile-col-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #b71150;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+
+}
+.tab-contents ul li span{
+    color: #b71150;
+    font-size: 14px;
+    
+}
+.tab-contents {
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+/* Services */
+#Services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px; 
+}
+.services-list div{
+    background: #333333;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: bg 0.5s, transform 0.5s ;
+}
+.services-list div h2{
+    font: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color: #b71150;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    background-color: #b71150;
+    transform: translate(-10px);
+
+}
+/* Portfolio */
+.Portfolio{
+    padding: 50px 0;
+}
+.work-list{display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px; 
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 500px;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#b71150);
+    border-radius: 10px;
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: 0.5s;
+}
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a i{
+    margin-top: 20px;
+    color: #b71150;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #b71150;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+/* Contacts */
+.Contacts-left{
+    flex-basis: 35%;
+}
+.Contacts-right{
+    flex-basis: 60%;
+    color: #333333;
+}
+.Contacts-left p{
+    margin-top: 30px;
+}
+.Contacts-left p i {
+    color: #2d9420;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #2d9420;
+    display: inline-block;
+    transition: 0.5s;
+}
+.social-icons a:hover{
+    color: #2d9420;
+    transform:translateY(-5px);
+}
+.sumbit-button{
+    box-shadow: 0 0 5px #b71150,
+    0 0 25px #b71150;
+    background-color: #333333;
+    width: 70px;
+    height: 50px;
+}   
+.sumbit-button:hover{
+    box-shadow: 0 0 5px #b71150,
+    0 0 25px, 0 0 50px,
+    0 0 100px, 0 0 200p;
+}
+.Contacts-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: #b71150;
+    background: #494949;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 18px;
+    border-radius: 6px;
+}
+.icon svg {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+.icon:hover svg {
+    transform: scale(1.1);  
+}
+

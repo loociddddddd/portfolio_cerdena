@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(IMAGES/background.jpg) no-repeat center center/cover;
+    height: 100vh;
+}
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    background: #b71150;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #ff4d6d;
+}

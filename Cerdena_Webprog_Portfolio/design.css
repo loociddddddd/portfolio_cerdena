@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    background: #b71150;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s;
+    z-index: 10; /* Make sure button stays on top */
+}
+
+.back-button:hover {
+    background: #ff4d6d;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+
+.photo-wrapper {
+    position: relative;
+    overflow: hidden; /* Ensure images do not overflow outside grid */
+}
+
+.photo {
+    width: 100%;
+    height: auto; /* Ensure images are responsive */
+    object-fit: cover; /* Makes sure images are cropped to fit */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #b71150;
+    color: black;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.overlay .close:hover {
+    background-color: #ff4d6d;
+}
+
+.photo-wrapper::after {
+    content: attr(data-detail);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #b71150;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.photo-wrapper:hover::after {
+    opacity: 1;
+}
